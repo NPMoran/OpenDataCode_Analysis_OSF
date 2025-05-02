@@ -10,7 +10,7 @@
 4.4.1
 
 ##Primary R Packages used for analysis and visualisation
-confintr v1.02
+confintr v1.0.2
 treemapify v2.5.6
 irr v0.84.1
 
