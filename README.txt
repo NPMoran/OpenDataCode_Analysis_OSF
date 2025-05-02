@@ -4,17 +4,22 @@
 [redacted]
 
 
-###R Session Details --
+### Project Description ----
 
-#R Version 
+This study assesses the clarity, strictness, and timing of data- and code-sharing policies across 275 journals in ecology and evolutionary biology. This also analyses initial policy compliance using submission data from two journals: Proceedings of the Royal Society B and Ecology Letters. 
+ 
+
+### R Session Details ----
+
+## R Version ----
 4.4.1
 
-##Primary R Packages used for analysis and visualisation
+## Primary R Packages used for analysis and visualisation
 confintr v1.0.2
 treemapify v2.5.6
 irr v0.84.1
 
-###All R Packages loaded 
+## All R Packages loaded 
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
@@ -43,46 +48,22 @@ loaded via a namespace (and not attached):
 
 
 
-### GitHub File Details
+### R Project File Details ----
 
-###R Script Files --
+## R Script Files ----
 
-#1_response_processing.R: Initial processing of response data from data extractors (DEs) from journal policy questionnaire.
+#1_response_processing.R: Initial processing of response data from data extractors (DEs). 
 #2_response_analysis.R: Analysis of journal policy data
 #3_mandata.R: Ecology Letters and Proceedings B data analysis
 #4_visualisations.R: Graphing code to produce treemaps.
 
 
 
-#FinalPolicyDeterminations_compiled.csv
-Journals: List of sampled journals
-Data_timing_FIN: Final rating for data timing (After Acceptance, During Peer Review, Not Mentioned)
-Data_strict_FIN: Final rating data strictness (Mandated, Encouraged, On Reviewer Request, Optional, Not Mentioned)
-Data_clarit_FIN: Final rating for data clarity (1-5)
-Code_timing_FIN: Final rating for code timing (After Acceptance, During Peer Review, Not Mentioned)
-Code_strict_FIN: Final rating for code strictness (Mandated, Encouraged, On Reviewer Request, Optional, Not Mentioned)	
-Code_clarit_FIN: Final rating for code clarity (1-5)
 
+## Data files (policy compliance data, Proc B and Ecology Letters) ----
 
-
-###Folders
-
-##FOLDER - data_mandatejournals: Data received from Ecology Letters and Proceedings B journals.
-
-	#Proc_B_reextraction report-ANON.csv  (i.e., data provided by Proc B, in csv format)
-	Manuscript.ID: ID of manuscript [redacted]
-	Manuscript Type: Type of manuscript submitted
-	Submission Date: Date of manuscript submission
-	Submission Question: Identifier of submission response question
-	Submission Question Response: Response to question [partially redacted]
-
-	#Proc_b_newnew_combined-ANON.csv  (i.e., data provided by Proc B, reformatted for analysis
-	Manuscript.ID: ID of manuscript [redacted]
-	Manuscript Type: Type of manuscript submitted
-	Submission.Question.Response.x: Was there a response to the data question.
-	Submission.Question.Response.y: If yes, what information is there. [redacted]
-
-	#ELE data-ANON.xlsx  (i.e., data provided by Eco Letts, in xlsx format)
+#data_mandatejournals/ELE data-ANON.xlsx  
+-- Policy compliance data provided by Eco Letts, in xlsx format)
 		Jun-Aug 21 sheet: 
 		Manuscript ID: ID of manuscript [redacted]
 		Compliant data statement provided at initial submission? (y/n/unknown)
@@ -93,182 +74,259 @@ Code_clarit_FIN: Final rating for code clarity (1-5)
 		Compliant DOI provided at initial submission? (y/n)
 
 
+#data_mandatejournals/Proc_B_reextraction report-ANON.csv  
+-- Policy compliance data provided by Proc B, original in csv format.
 
-## - SUB-FOLDER- Proc_b_processing
-#H01_Proc V Processing_270820240-ANON.csv
-sort_id: id number of submission
-Manuscript.ID: Proc B Ms number [redacted]
-Submission.Question.Response.y: T/F submission response [redacted]
-appar_link: T/F is there a link
-appar_supp: T/F is there supp matt
-appar_data: T/F is there data
-appar_code: Is there code
-Is a link and/or supplementary materials provided?: Yes/No
-How is it provided?: How is the above provided
-Is data and/or code provided?: What is provided, data/code?
-Checked by: Who checked the data [redacted]
-Notes: Any Notes
+		Manuscript.ID: ID of manuscript [redacted]
+		Manuscript Type: Type of manuscript submitted
+		Submission Date: Date of manuscript submission
+		Submission Question: Identifier of submission response question
+		Submission Question Response: Response to question [partially redacted]
+
+
+#data_mandatejournals/Proc_B_newnew_combined-ANON.csv  
+-- Policy compliance data provided by Proc B, reformatted for analysis
+
+		Manuscript.ID: ID of manuscript [redacted]
+		Manuscript Type: Type of manuscript submitted
+		Submission.Question.Response.x: "Does your paper present new data, or use data/models published elsewhere?".
+		Submission.Question.Response.y: "If yes, provide a link to your data if it is in a repository. If depositing your data with Dryad, <b>ensure that you give the private reviewer 'sharing' link</b>. If your data is uploaded as supplementary material, please state this. Your paper will be unsubmitted without this information." [redacted]
+
+
+#data_mandatejournals/Proc_b_processing/H01_Proc B Processing_270820240-ANON.csv
+-- Processing dataset for analysis of data compliance information provied in Submission.Question.Response.y above
+
+		sort_id: id number of submission
+		Manuscript.ID: Proc B Ms number [redacted]
+		Submission.Question.Response.y: T/F submission response [redacted]
+		appar_link: T/F does it appear that a link has been provided
+		appar_supp: T/F does it appear that supplementary materials matt have been provided
+		appar_data: T/F does it appear that is there data provided
+		appar_code: T/F does it appear that there code provided
+		Is a link and/or supplementary materials provided?: Yes/No
+		How is it provided?: How is the above provided: Both, Link, Supplementary materials, NA
+		If data and/or code provided?: What is provided, data/code? Data, Code, Data and Code, Unclear, NA
+		Checked by: Who checked the data [redacted]
+		Notes: Any Notes
 		
 		
-##FOLDER - data_responses: Journal data and code policy data from DEs and final determinations w/ processing. 
-#compdat_culina.csv
-Journal: Journal in Culina et al 2020
-Culina: Is code mandatory/encouraged or mandatory/encouraged? 
-      
-#compdat_culina.csv
-Journal: Journal in Roche et al
-policy: rating of data policy (none, strong, weak)
-      
-#H01_resp_aggregated_01102024.csv
-Journals: Journal extracted
-N_responses: Number of DE responses
-Data_timing: Data timing rating
-Data_timing_agree: How many DEs agree
-Data_strict: Data strictness rating
-Data_strict_agree: How many DEs agree
-Data_clar_mean: Mean clarity for this journal
-Data_clar_mode: Mode clarity for this journal
-Data_clar_agree: How many DEs agree
-Data_clar_Nas: Any Nas for clarity
-Code_timing: Code timing rating
-Code_timing_agree: How many DEs agree
-Code_strict: Code strictness rating
-Code_strict_agree: How many DEs agree
-Code_clar_mean: Mean clarity for this journal
-Code_clar_mode: Mode clarity for this journal	
-Code_clar_agree: How many DEs agree
-Code_clar_Nas: Any Nas for clarity
+		
 
-#H01_resp_processed_others-ANON.csv
-MergeID: Email for merging [redacted]
-Timestamp: Timing of response
-Email.Address: Email address of DE [redacted]
-Name.of.Reviewer: Name of DE [redacted]
-Name.of.Journal: Name of journal
-When.was.the.earliest.the.journal.expected.data.to.be.provided..x: Timing of data-sharing
-How.strict.is.this.policy...Data.policy.: Strictness of data-sharing
-Provide.the.text.that.mentions.the.above.statement..if.possible..: Data policy text.
-How.clear.do.you.think.this.statement.is.: Clarity of policy rating
-Where.was.the.data.policy.located...provide.a.url.to.the.specific.page..if.any.: Provide link to the policy
-Any.other.comments.: Any comments
-When.was.the.earliest.the.journal.expected.code.to.be.provided..x: Timing of code-sharing
-How.strict.is.this.policy...Code.Policy.\: Strictness of code-sharing
-Provide.the.text.that.mentions.the.above.statement..if.possible...1: Code policy text
-How.clear.do.you.think.this.statement.is..1: Clarity of policy
-Where.was.the.data.policy.located...provide.a.url.to.the.specific.page..if.any..1: Provide a link to the code policy
-Any.other.comments..1: Any other comments
+## Data files (policy DE questionnaire response data for journal data and code policy) ----
 
-#H01_resp_processed-ANON.csv
-Timestamp: Timing of response
-Email.Address: Email address of DE [redacted]
-Name.of.Reviewer: Name of DE [redacted]
-Name.of.Journal: Name of journal
-When.was.the.earliest.the.journal.expected.data.to.be.provided.: Timing of data-sharing
-How.strict.is.this.policy...Data.policy.: Strictness of data-sharing
-Provide.the.text.that.mentions.the.above.statement..if.possible..: Data policy text.
-How.clear.do.you.think.this.statement.is.: Clarity of policy rating
-Where.was.the.data.policy.located...provide.a.url.to.the.specific.page..if.any.: Provide link to the policy
-Any.other.comments.: Any comments
-When.was.the.earliest.the.journal.expected.code.to.be.provided: Timing of code-sharing
-How.strict.is.this.policy...Code.Policy.\: Strictness of code-sharing
-Provide.the.text.that.mentions.the.above.statement..if.possible...1: Code policy text
-How.clear.do.you.think.this.statement.is..1: Clarity of policy
-Where.was.the.data.policy.located...provide.a.url.to.the.specific.page..if.any..1: Provide a link to the code policy
-Any.other.comments..1: Any other comments
+#data_responses/H01_resp_processed-ANON.csv
+-- Processed DE response data from DEs (see processing steps in accompanying scripts)
 
-#H01_responses_07022024-ANON.csv
-Timestamp: Timing of response
-Email Address: Email address of DE [redacted]
-Name of Reviewer: Name of DE [redacted]
-Name of Journal: Name of journal
-When was the earliest the journal expected data to be provided.: Timing of data-sharing
-How strict is this policy? [Data policy]: Strictness of data-sharing
-Provide the text that mentions the above statement (if possible): Data policy text.
-How clear do you think this statement is?: Clarity of policy rating
-Where was the data policy located? (provide a url to the specific page; if any): Provide link to the policy
-Any other comments.: Any comments
-When was the earliest the journal expected code to be provided? Timng of code-sharing
-How strict is this policy? [Code policy]: Strictness of code-sharing
-Provide the text that mentions the above statement (if possible): Code policy text
-How clear do you think this statement is?: Clarity of policy
-Where was the code  policy located? (provide a url to the specific page; if any):Provide a link to the code policy
-Any other comments: Any other comments
-
-#H01_responses_07022024_corrections-ANON.csv
-Timestamp: Timing of response
-Email Address: Email address of DE [redacted]
-Name of Reviewer: Name of DE [redacted]
-Name of Journal: Name of journal
-When was the earliest the journal expected data to be provided.: Timing of data-sharing
-How strict is this policy? [Data policy]: Strictness of data-sharing
-Provide the text that mentions the above statement (if possible): Data policy text.
-How clear do you think this statement is?: Clarity of policy rating
-Where was the data policy located? (provide a url to the specific page; if any): Provide link to the policy
-Any other comments.: Any comments
-When was the earliest the journal expected code to be provided? Timng of code-sharing
-How strict is this policy? [Code policy]: Strictness of code-sharing
-Provide the text that mentions the above statement (if possible): Code policy text
-How clear do you think this statement is?: Clarity of policy
-Where was the code  policy located? (provide a url to the specific page; if any):Provide a link to the code policy
-Any other comments: Any other comments
+		Timestamp: Timing of response
+		Email.Address: Email address of DE [redacted]
+		Name.of.Reviewer: Name of DE [redacted]
+		Name.of.Journal: Name of journal
+		When.was.the.earliest.the.journal.expected.data.to.be.provided.: Timing of data-sharing
+		How.strict.is.this.policy...Data.policy.: Strictness of data-sharing
+		Provide.the.text.that.mentions.the.above.statement..if.possible..: Data policy text.
+		How.clear.do.you.think.this.statement.is.: Clarity of policy rating
+		Where.was.the.data.policy.located...provide.a.url.to.the.specific.page..if.any.: Provide link to the policy
+		Any.other.comments.: Any comments
+		When.was.the.earliest.the.journal.expected.code.to.be.provided: Timing of code-sharing
+		How.strict.is.this.policy...Code.Policy.\: Strictness of code-sharing
+		Provide.the.text.that.mentions.the.above.statement..if.possible...1: Code policy text
+		How.clear.do.you.think.this.statement.is..1: Clarity of policy
+		Where.was.the.data.policy.located...provide.a.url.to.the.specific.page..if.any..1: Provide a link to the code policy
+		Any.other.comments..1: Any other comments
 
 
-# - SUB-FOLDER - processing_disagreements
-#H01_FinalDeterms_01102024-ANON.csv
-Journals: Name of journal
-Publisher: Name of publisher
-Publisher-Level Policy: Was there a publisher-level policy linked in the data/code policy?
-2024_Update?: Was there an update in 2024
-Reviewer_A: Name of reviewer A [redacted]
-Reviewer_B: Name of reviewer B [redacted]
-Reviewer_notes: Any notes (out of date) [redacted]
-Data_timing_DE: DE timing rating
-Data_timing_agree: DE agreement
-Data_timing_FIN: Final rating
-Data_strict_DE: DE strictness rating
-Data_strict_agree: DE agreement
-Data_strict_FIN: Final rating
-Code_timing_DE: DE timing rating
-Code_timing_agree: DE agreement
-Code_timing_FIN: Final rating
-Code_strict_DE: DE strictness rating
-Code_strict_agree: DE agreement
-Code_strict_FIN: Final rating
+#data_responses/H01_resp_processed_others-ANON.csv
+-- Processed DE response data from DEs with free text entries for Timing under "Other" resolved into categorical groupings
+
+		MergeID: Email for merging [redacted]
+		Timestamp: Timing of response
+		Email.Address: Email address of DE [redacted]
+		Name.of.Reviewer: Name of DE [redacted]
+		Name.of.Journal: Name of journal
+		When.was.the.earliest.the.journal.expected.data.to.be.provided..x: Timing of data-sharing
+		How.strict.is.this.policy...Data.policy.: Strictness of data-sharing
+		Provide.the.text.that.mentions.the.above.statement..if.possible..: Data policy text.
+		How.clear.do.you.think.this.statement.is.: Clarity of policy rating
+		Where.was.the.data.policy.located...provide.a.url.to.the.specific.page..if.any.: Provide link to the policy
+		Any.other.comments.: Any comments
+		When.was.the.earliest.the.journal.expected.code.to.be.provided..x: Timing of code-sharing
+		How.strict.is.this.policy...Code.Policy.\: Strictness of code-sharing
+		Provide.the.text.that.mentions.the.above.statement..if.possible...1: Code policy text
+		How.clear.do.you.think.this.statement.is..1: Clarity of policy
+		Where.was.the.data.policy.located...provide.a.url.to.the.specific.page..if.any..1: Provide a link to the code policy
+		Any.other.comments..1: Any other comments
 
 
-# - SUB-FOLDER - processing_others folder
-#H01_respB_others_Data_complete-ANON.csv
-Timestamp: Time of review
-Email.Address: Email address of DE [redacted]
-Name.of.Reviewer: Name of DE [redacted]
-Name.of.Journal: Journal reviewed
-When.was.the.earliest.the.journal.expected.data.to.be.provided.: When was the earliest data was provided text
-Any.other.comments.: Any comments?
-RECAT_When.was.the.earliest.the.journal.expected.data.to.be.provided.: Recategorisation of DE text
-RECAT_by: Who by? [redacted]
-RECAT_notes: Any notes? [redacted]
+#data_responses/H01_responses_07022024-ANON.csv
+-- Raw DE response data from DEs
 
-#H01_respB_others_Code_complete-ANON.csv
-Timestamp: Time of review
-Email.Address: Email address of DE [redacted]
-Name.of.Reviewer: Name of DE [redacted]
-Name.of.Journal: Journal reviewed
-When.was.the.earliest.the.journal.expected.code.to.be.provided.: When was the earliest code was provided text
-Any.other.comments.: Any comments?
-RECAT_When.was.the.earliest.the.journal.expected.code.to.be.provided.: Recategorisation of DE text
-RECAT_by: Who by? [redacted]
-RECAT_notes: Any notes? [redacted]
-
- 
-##FOLDER - outputs_ visualisations: Figures and tables in the manuscript. All produced anbd idenfiable from included scripts.
+		Timestamp: Timing of response
+		Email Address: Email address of DE [redacted]
+		Name of Reviewer: Name of DE [redacted]
+		Name of Journal: Name of journal
+		When was the earliest the journal expected data to be provided.: Timing of data-sharing
+		How strict is this policy? [Data policy]: Strictness of data-sharing
+		Provide the text that mentions the above statement (if possible): Data policy text.
+		How clear do you think this statement is?: Clarity of policy rating
+		Where was the data policy located? (provide a url to the specific page; if any): Provide link to the policy
+		Any other comments.: Any comments
+		When was the earliest the journal expected code to be provided? Timng of code-sharing
+		How strict is this policy? [Code policy]: Strictness of code-sharing
+		Provide the text that mentions the above statement (if possible): Code policy text
+		How clear do you think this statement is?: Clarity of policy
+		Where was the code  policy located? (provide a url to the specific page; if any):Provide a link to the code policy
+		Any other comments: Any other comments
 
 
-##FOLDER - subset assignments: List of journals for each DE as well as original total list (includes duplicates + old journals)
-	#H01_subset_assigments_13122023-ANONYMISED.csv
-	Subset_number: What number subset did the journal appear in
-        Journal: Name of journal
-        Assigned_to_email: email address of DE [redacted]
-        Notes: Any notes?
+#data_responses/H01_responses_07022024_corrections-ANON.csv
+-- Raw DE response data from DEs with manual corrections (i.e., errors in entries that DEs identified and asked to be manually corrected)
+
+		Timestamp: Timing of response
+		Email Address: Email address of DE [redacted]
+		Name of Reviewer: Name of DE [redacted]
+		Name of Journal: Name of journal
+		When was the earliest the journal expected data to be provided.: Timing of data-sharing
+		How strict is this policy? [Data policy]: Strictness of data-sharing
+		Provide the text that mentions the above statement (if possible): Data policy text.
+		How clear do you think this statement is?: Clarity of policy rating
+		Where was the data policy located? (provide a url to the specific page; if any): Provide link to the policy
+		Any other comments.: Any comments
+		When was the earliest the journal expected code to be provided? Timng of code-sharing
+		How strict is this policy? [Code policy]: Strictness of code-sharing
+		Provide the text that mentions the above statement (if possible): Code policy text
+		How clear do you think this statement is?: Clarity of policy
+		Where was the code  policy located? (provide a url to the specific page; if any):Provide a link to the code policy
+		Any other comments: Any other comments
+
+
+#subset assignments/H01_subset_assigments_13122023-ANONYMISED.csv
+--  List of journals for each DE as well as original total list (includes duplicates + old journals)
+	  Subset_number: What number subset did the journal appear in
+    Journal: Name of journal
+    Assigned_to_email: email address of DE [redacted]
+    Notes: Any notes?
+
+
+#data_responses/H01_resp_aggregated_01102024.csv
+-- Aggregated response data for assessment of agreement levels between DEs
+
+    Journals: Journal extracted
+    N_responses: Number of DE responses
+    Data_timing: Data timing rating
+    Data_timing_agree: How many DEs agree
+    Data_strict: Data strictness rating
+    Data_strict_agree: How many DEs agree
+    Data_clar_mean: Mean clarity for this journal
+    Data_clar_mode: Mode clarity for this journal
+    Data_clar_agree: How many DEs agree
+    Data_clar_Nas: Any Nas for clarity
+    Code_timing: Code timing rating
+    Code_timing_agree: How many DEs agree
+    Code_strict: Code strictness rating
+    Code_strict_agree: How many DEs agree
+    Code_clar_mean: Mean clarity for this journal
+    Code_clar_mode: Mode clarity for this journal	
+    Code_clar_agree: How many DEs agree
+    Code_clar_Nas: Any Nas for clarity
+
+
+#data_responses/compdat_culina.csv
+-- Policy determinations from the preceding paper Culina et al 2020, for comparison.
+
+		Journal: Journal in Culina et al 2020
+		Culina: Is code mandatory/encouraged or mandatory/encouraged? 
+
+
+#data_responses/compdat_culina.csv
+-- Policy determinations from the preceding paper Roche et al 2022, for comparison.
+
+		Journal: Journal in Roche et al 2022
+		policy: rating of data policy (none, strong, weak)
+
+
+#data_responses/processing_disagreements/H01_FinalDeterms_01102024-ANON.csv
+-- Final policy determinations for each journal, based on DE responses and lead author assessments. 
+
+    Journals: Name of journal
+    Publisher: Name of publisher
+    Publisher-Level Policy: Was there a publisher-level policy linked in the data/code policy?
+    2024_Update?: Was there an update in 2024
+    Reviewer_A: Name of reviewer A [redacted]
+    Reviewer_B: Name of reviewer B [redacted]
+    Reviewer_notes: Any notes (out of date) [redacted]
+    Data_timing_DE: DE timing rating
+    Data_timing_agree: DE agreement
+    Data_timing_FIN: Final rating
+    Data_strict_DE: DE strictness rating
+    Data_strict_agree: DE agreement
+    Data_strict_FIN: Final rating
+    Code_timing_DE: DE timing rating
+    Code_timing_agree: DE agreement
+    Code_timing_FIN: Final rating
+    Code_strict_DE: DE strictness rating
+    Code_strict_agree: DE agreement
+    Code_strict_FIN: Final rating
+
+
+#data_responses/processing_others/H01_respB_others_Data_complete-ANON.csv
+-- interim processing file, for the recategorisation free text entries for Timing (data) under "Other" into categorical groupings
+
+    Timestamp: Time of review
+    Email.Address: Email address of DE [redacted]
+    Name.of.Reviewer: Name of DE [redacted]
+    Name.of.Journal: Journal reviewed
+    When.was.the.earliest.the.journal.expected.data.to.be.provided.: When was the earliest data was provided text
+    Any.other.comments.: Any comments?
+    RECAT_When.was.the.earliest.the.journal.expected.data.to.be.provided.: Recategorisation of DE text
+    RECAT_by: Who by? [redacted]
+    RECAT_notes: Any notes? [redacted]
+
+
+#data_responses/processing_others/H01_respB_others_Code_complete-ANON.csv
+-- interim processing file, for the recategorisation free text entries for Timing (data) under "Other" into categorical groupings
+
+    Timestamp: Time of review
+    Email.Address: Email address of DE [redacted]
+    Name.of.Reviewer: Name of DE [redacted]
+    Name.of.Journal: Journal reviewed
+    When.was.the.earliest.the.journal.expected.code.to.be.provided.: When was the earliest code was provided text
+    Any.other.comments.: Any comments?
+    RECAT_When.was.the.earliest.the.journal.expected.code.to.be.provided.: Recategorisation of DE text
+    RECAT_by: Who by? [redacted]
+    RECAT_notes: Any notes? [redacted]
+
+
+
+## Data files (results, outputs, visualisations) ----
+
+#outputs_visualisations/FinalPolicyDeterminations_compiled.csv  
+-- This file contains the final aggregated results for our assessment of the data and code submission policies for 275 journals in ecology and evolutionary biology. Determinations are based on DE reponses to a mutliple choice questionnaire, with some post-processing aggregation steps undertaken by the lead authors.
+
+   Journals: List of sampled journals
+   Data_timing_FIN: Final rating for data timing (After Acceptance, During Peer Review, Not Mentioned)
+   Data_strict_FIN: Final rating data strictness (Mandated, Encouraged, On Reviewer Request, Optional, Not Mentioned)
+   Data_clarit_FIN: Final rating for data clarity (1-5, from "Totally Unclear" to "Totally Clear")
+   Code_timing_FIN: Final rating for code timing (After Acceptance, During Peer Review, Not Mentioned)
+   Code_strict_FIN: Final rating for code strictness (Mandated, Encouraged, On Reviewer Request, Optional, Not Mentioned)	
+   Code_clarit_FIN: Final rating for code clarity (1-5, from "Totally Unclear" to "Totally Clear")
+
+
+#The remaining output files from the the analysis are all produced and identifiable from included scripts. Brief descriptions are provided below.
+
+#outputs_ visualisations/...
+#Figure1_treemap_data_RZNMv2.png  (Figure 1A output image file)
+#Figure1_treemap_code_RZNMv2.png  (Figure 1B output image file)
+#Figure1_treemap_v2.pdn           (paint.net image file for manually combining figure panels and minor aesthetic edits)
+#Figure1_treemap_v2.png           (Figure 1, publication version)
+#Table_FinDet1                    (Table 1, data policy summary data)
+#Table_FinDet2                    (Table 1, code policy summary data)
+#Table_DEresp1                    (Table 2, data for timing and strictness agreement)
+#Table_DEresp1_clar               (Table 2, data for clarity agreement)
+#Table_mandata1                   (Table 3, Eco Letts compliance summary data)
+#Table_mandata2                   (Table 4, Eco Letts hypothesis testing outputs)
+#Table_mandata3                   (Table 5: Proc B, summary data by submission type)
+#Table_procb                      (Table 6: Proc B, summary data for how data and or code is provided)
+#Table_S1_journal_list            (Table S1, final list of journals included in analysis)
 
 
 

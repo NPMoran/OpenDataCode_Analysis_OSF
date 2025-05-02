@@ -40,7 +40,6 @@ comdata_EL_2021how
 #Notes Re: Compliance in 2023: 
 #  -  Yes = A data statement provided on submission (stating the availability of data/code via a DOI, or saying it will be provided on acceptance). 
 #           
-
 #Caveats, 
 #  -  EIC desk rejections were excluded from this and not from 2023 (unclear if that has any effect)
 
@@ -189,8 +188,9 @@ Table_mandata2$text <- paste(Table_mandata2$text, ")", sep = "")
 #proc_b_newnew_combined <- merge(proc_b_newnew_1_reduced, proc_b_newnew_2_reduced, by = "Manuscript.ID", all.x = TRUE)
 #nrow(proc_b_newnew_combined) #2340
 #n_distinct(proc_b_newnew_combined$Manuscript.ID) #2340
-#
-#
+
+
+
 # - Preliminary summary stats
 #write.csv(proc_b_newnew_combined, "~/OpenDataCode_Analysis_OSF/data_mandatejournals/Proc_B_newnew_combined.csv", row.names = FALSE)
 proc_b_newnew_combined <- read.csv("~/OpenDataCode_Analysis_OSF/data_mandatejournals/Proc_B_newnew_combined-ANON.csv")
@@ -219,56 +219,11 @@ prob_b_quesA <- prob_b_quesA[order(prob_b_quesA$Perc,decreasing=TRUE),]
 prob_b_quesA$Perc <- paste(prob_b_quesA$Perc, "%", sep = "")
 prob_b_quesA
 
-
 #write.csv(prob_b_quesA, "~/OpenDataCode_Analysis_OSF/outputs_visualisations/Table_mandata3.csv", row.names = FALSE)
 
 
-#Journal-specific submission data:
-#VII.  Submissions will share data or code more often than not sharing [1 hypothesis].
-#VIII. Data-sharing will be more frequent than code-sharing [1 hypothesis].
-#IX.   There will be greater code- and data-sharing during peer review after the journal’s implementation of mandated sharing policies. 
-#      [1 hypothesis for code- and 1 for data-sharing = 2*1].
 
-
-
-#Part 2. Journal-specific data.
-#For journal-specific submission data, the main variable measured will be the proportion of submissions...
-#(i.e., of the total of research papers), that:
-#  - are compliant with the current data/code submission policy, and
-#  - provide data/code on submission via a DOI/link (for Eco Let data only).
-#
-#• For Proc B data, research papers will be stratified by:
-#  - Article type (e.g., research article, review, commentary, etc.)
-#  - Location of open data/code (repository, supplementary material, etc).
-
-#Thus, compliance will be determined based simply on whether the authors appear to have complied with the code/data policy in principle 
-#(i.e., provided a DOI/link, or stated that they have uploaded supplementary files).
-
-
-## Statistical models
-#• Relating to hypotheses VII-IX: 
-#  - We will conduct Chi-squared tests to assess VII) whether the number of papers that share data and code differs from those that don’t 
-#    (observed = number of studies that do/do not share data or code, expected = equal number of studies that do/do not share data and code) 
-#    VIII) whether data-sharing differs from code-sharing frequency (observed = number of studies with data and code-sharing, expected = equal number of studies that share either code or data) and IX) for Eco Let only, whether there is greater code- or data-sharing pre- and post-mandate (observed = number of studies with data and code-sharing pre/post-mandate, expected = equal number of studies with data and code-sharing pre/post-mandate).
-
-## Transformations
-#For the journal Proc B, all data will be categorised as post-mandate. 
-#Based on communication with the journal, the policy has been in place since 2017, and pre-mandate data on submissions could therefore not be obtained.
-
-#From the data provided, where possible, we will categorise submissions based on:
-#  - The proportion of total submissions that comply with the policy by providing some data/code (i.e., compliant versus non-compliant).
-#  - Article type (e.g., research article, review, commentary, etc.) to then distinguish articles that would not be expected to require data/code alongside (i.e., data/code expected versus non-expected; e.g. ‘research’ = expected whereas ‘review’ = not expected)
-#  - How the submission appears to comply with the mandate (e.g., deposited in a repository like Dryad/Zenodo/OSF, other platforms such as GitHub, or presented in the supplementary material).
-
-
-##Exploratory analysis
-#  3 -  How does the proportion of papers with data and code differ depending on the manuscript type (Proc B only)?
-#  4 -  What is the proportion of papers that provide data or code via supplementary files submitted to the journal versus those complying via DOIs/links to repositories?
-#
-#To answer both of these we will calculate descriptive statistics in the form of percentages stratified by the appropriate variable (manuscript type or location of data/code). 
-
-
-#Processing question 2 responses.
+# - Processing question 2 responses
 #proc_b_research_yes <- subset(proc_b_newnew_combined, Manuscript.Type == "Research")
 #proc_b_research_yes <- subset(proc_b_research_yes, Submission.Question.Response.x == "Yes")
 #nrow(proc_b_research_yes)
@@ -276,6 +231,8 @@ prob_b_quesA
 #
 ##Searching for apparent links, supplements, data, code 
 ##(note, this was used to inform manual coding of responses)
+#
+#
 #Manuscript.ID = proc_b_research_yes$Manuscript.ID
 #Submission.Question.Response.y = proc_b_research_yes$Submission.Question.Response.y
 #list_A <- c("https", "github", "gitlab", "osf", "dryad", "doi", "figshare", 
@@ -308,11 +265,11 @@ prob_b_quesA
 #
 #
 ##write.csv(DT_result, "~/OpenDataCode_Analysis_OSF/data_mandatejournals/proc_b_processing/Proc_B_stringsearch.csv", row.names = FALSE)
+#(note, this interim processing file not included in the data/code repository, but the output variables are incorporated in the file Proc B Processing_27082024-ANON.csv below)
 
 
-
-#Proc B, Submission Qu Response Data
-proc_b_respproc <- read.csv("~/OpenDataCode_Analysis_OSF/data_mandatejournals/proc_b_processing/H01_Proc B Processing_27082024-ANON.csv")
+# - Analysis of processed question 2 response data
+proc_b_respproc <- read.csv("~/OpenDataCode_Analysis_OSF/data_mandatejournals/proc_b_processing/Proc B Processing_27082024-ANON.csv")
 
 proc_b_respproc <- subset(proc_b_respproc, Is.a.link.and.or.supplementary.materials.provided. != "")
 nrow(proc_b_respproc) #2000 processed
@@ -329,6 +286,7 @@ procb_table1$text <- paste(procb_table1$text, "%)", sep = "")
 # - Similarly, statements saying accession numbers were provided in supplementary materials, without any other data shared, are not considered to have shared data via supplements or link. 
 # - If a generic link was provided to a sequence data repository along with accession numbers, this was considered to have provided a link.  
 # - In any other cases where generic link was provided (e.g., just to github, or to a author's github profile), without additional identifying information, this was considered to not have provided a link to the data/code. 
+
 
 table(subset(proc_b_respproc, Is.a.link.and.or.supplementary.materials.provided. %in% c("No"))$Notes)
 table(subset(proc_b_respproc, Is.a.link.and.or.supplementary.materials.provided. %in% c("Unclear"))$Notes)
@@ -354,7 +312,7 @@ procb_table <- rbind(procb_table1,
 
 
 
-#Hypothesis test for data versus code sharing
+# - Hypothesis testing for data versus code sharing
 
 Conttab_ProDC <- NULL
 Conttab_ProDC$Data <- c(63+428,869+568)
