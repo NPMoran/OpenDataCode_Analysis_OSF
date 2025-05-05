@@ -4,10 +4,14 @@
 [redacted]
 
 
+
+
 ### Project Description ----
 
 This study assesses the clarity, strictness, and timing of data- and code-sharing policies across 275 journals in ecology and evolutionary biology. This also analyses initial policy compliance using submission data from two journals: Proceedings of the Royal Society B and Ecology Letters. 
  
+
+
 
 ### R Session Details ----
 
@@ -21,16 +25,16 @@ irr v0.84.1
 
 ## All R Packages loaded 
 
-attached base packages:
+Attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
-other attached packages:
+Other attached packages:
  [1] gridExtra_2.3     treemapify_2.5.6  readxl_1.4.2      rcompanion_2.4.36 confintr_1.0.2    irr_0.84.1       
  [7] lpSolve_5.6.20    data.table_1.15.4 lme4_1.1-33       Matrix_1.6-0      lubridate_1.9.3   forcats_1.0.0    
 [13] stringr_1.5.0     dplyr_1.1.4       purrr_1.0.1       readr_2.1.4       tidyr_1.3.0       tibble_3.2.1     
 [19] ggplot2_3.5.1     tidyverse_2.0.0  
 
-loaded via a namespace (and not attached):
+Loaded via a namespace (and not attached):
  [1] httr_1.4.7         splines_4.2.3      expm_0.999-7       gld_2.6.6          lmom_3.2          
  [6] stats4_4.2.3       coin_1.4-3         cellranger_1.1.0   pillar_1.9.0       lattice_0.20-45   
 [11] glue_1.6.2         minqa_1.2.5        colorspace_2.1-0   sandwich_3.1-0     plyr_1.8.8        
@@ -48,9 +52,10 @@ loaded via a namespace (and not attached):
 
 
 
+
 ### R Project File Details ----
 
-## R Script Files ----
+## R Script files ----
 
 #1_response_processing.R: Initial processing of response data from data extractors (DEs). 
 #2_response_analysis.R: Analysis of journal policy data
@@ -58,9 +63,18 @@ loaded via a namespace (and not attached):
 #4_visualisations.R: Graphing code to produce treemaps.
 
 
+## Data files contents - 
+
+The files in the R project include 3 classes of data files, described in the following subsections below:
+
+#1 - Policy compliance data provided by Proc B and Ecology Letters.
+#2 - Responses from the data extraction questionnaire, for our assessment of current journal data and code policies.
+#3 - Outputs/results files (including statistical outputs for tables in the main text, and data visualisation files)
+
+All interim data processing files neccessary for understanding all steps of the processing and analysis are also provided.
 
 
-## Data files (policy compliance data, Proc B and Ecology Letters) ----
+## 1 - Policy compliance data, Proc B and Ecology Letters) ----
 
 #data_mandatejournals/ELE data-ANON.xlsx  
 -- Policy compliance data provided by Eco Letts, in xlsx format)
@@ -68,34 +82,27 @@ loaded via a namespace (and not attached):
 		Manuscript ID: ID of manuscript [redacted]
 		Compliant data statement provided at initial submission? (y/n/unknown)
 		Details of data statement: Information about the data provided.
-
 		Sept-Nov 23 sheet:
 		Manuscript ID: ID of manuscript
 		Compliant DOI provided at initial submission? (y/n)
 
-
 #data_mandatejournals/Proc_B_reextraction report-ANON.csv  
 -- Policy compliance data provided by Proc B, original in csv format.
-
 		Manuscript.ID: ID of manuscript [redacted]
 		Manuscript Type: Type of manuscript submitted
 		Submission Date: Date of manuscript submission
 		Submission Question: Identifier of submission response question
 		Submission Question Response: Response to question [partially redacted]
 
-
 #data_mandatejournals/Proc_B_newnew_combined-ANON.csv  
 -- Policy compliance data provided by Proc B, reformatted for analysis
-
 		Manuscript.ID: ID of manuscript [redacted]
 		Manuscript Type: Type of manuscript submitted
 		Submission.Question.Response.x: "Does your paper present new data, or use data/models published elsewhere?".
 		Submission.Question.Response.y: "If yes, provide a link to your data if it is in a repository. If depositing your data with Dryad, <b>ensure that you give the private reviewer 'sharing' link</b>. If your data is uploaded as supplementary material, please state this. Your paper will be unsubmitted without this information." [redacted]
 
-
 #data_mandatejournals/Proc_b_processing/H01_Proc B Processing_270820240-ANON.csv
 -- Processing dataset for analysis of data compliance information provied in Submission.Question.Response.y above
-
 		sort_id: id number of submission
 		Manuscript.ID: Proc B Ms number [redacted]
 		Submission.Question.Response.y: T/F submission response [redacted]
@@ -109,14 +116,11 @@ loaded via a namespace (and not attached):
 		Checked by: Who checked the data [redacted]
 		Notes: Any Notes
 		
-		
-		
 
-## Data files (policy DE questionnaire response data for journal data and code policy) ----
+## 2 - Data files (policy DE questionnaire response data for journal data and code policy) ----
 
 #data_responses/H01_resp_processed-ANON.csv
 -- Processed DE response data from DEs (see processing steps in accompanying scripts)
-
 		Timestamp: Timing of response
 		Email.Address: Email address of DE [redacted]
 		Name.of.Reviewer: Name of DE [redacted]
@@ -134,10 +138,8 @@ loaded via a namespace (and not attached):
 		Where.was.the.data.policy.located...provide.a.url.to.the.specific.page..if.any..1: Provide a link to the code policy
 		Any.other.comments..1: Any other comments
 
-
 #data_responses/H01_resp_processed_others-ANON.csv
 -- Processed DE response data from DEs with free text entries for Timing under "Other" resolved into categorical groupings
-
 		MergeID: Email for merging [redacted]
 		Timestamp: Timing of response
 		Email.Address: Email address of DE [redacted]
@@ -156,10 +158,8 @@ loaded via a namespace (and not attached):
 		Where.was.the.data.policy.located...provide.a.url.to.the.specific.page..if.any..1: Provide a link to the code policy
 		Any.other.comments..1: Any other comments
 
-
 #data_responses/H01_responses_07022024-ANON.csv
 -- Raw DE response data from DEs
-
 		Timestamp: Timing of response
 		Email Address: Email address of DE [redacted]
 		Name of Reviewer: Name of DE [redacted]
@@ -176,11 +176,9 @@ loaded via a namespace (and not attached):
 		How clear do you think this statement is?: Clarity of policy
 		Where was the code  policy located? (provide a url to the specific page; if any):Provide a link to the code policy
 		Any other comments: Any other comments
-
 
 #data_responses/H01_responses_07022024_corrections-ANON.csv
 -- Raw DE response data from DEs with manual corrections (i.e., errors in entries that DEs identified and asked to be manually corrected)
-
 		Timestamp: Timing of response
 		Email Address: Email address of DE [redacted]
 		Name of Reviewer: Name of DE [redacted]
@@ -197,7 +195,6 @@ loaded via a namespace (and not attached):
 		How clear do you think this statement is?: Clarity of policy
 		Where was the code  policy located? (provide a url to the specific page; if any):Provide a link to the code policy
 		Any other comments: Any other comments
-
 
 #subset assignments/H01_subset_assigments_13122023-ANONYMISED.csv
 --  List of journals for each DE as well as original total list (includes duplicates + old journals)
@@ -206,10 +203,8 @@ loaded via a namespace (and not attached):
     Assigned_to_email: email address of DE [redacted]
     Notes: Any notes?
 
-
 #data_responses/H01_resp_aggregated_01102024.csv
 -- Aggregated response data for assessment of agreement levels between DEs
-
     Journals: Journal extracted
     N_responses: Number of DE responses
     Data_timing: Data timing rating
@@ -229,24 +224,18 @@ loaded via a namespace (and not attached):
     Code_clar_agree: How many DEs agree
     Code_clar_Nas: Any Nas for clarity
 
-
 #data_responses/compdat_culina.csv
 -- Policy determinations from the preceding paper Culina et al 2020, for comparison.
-
 		Journal: Journal in Culina et al 2020
 		Culina: Is code mandatory/encouraged or mandatory/encouraged? 
 
-
 #data_responses/compdat_culina.csv
 -- Policy determinations from the preceding paper Roche et al 2022, for comparison.
-
 		Journal: Journal in Roche et al 2022
 		policy: rating of data policy (none, strong, weak)
 
-
 #data_responses/processing_disagreements/H01_FinalDeterms_01102024-ANON.csv
 -- Final policy determinations for each journal, based on DE responses and lead author assessments. 
-
     Journals: Name of journal
     Publisher: Name of publisher
     Publisher-Level Policy: Was there a publisher-level policy linked in the data/code policy?
@@ -267,10 +256,8 @@ loaded via a namespace (and not attached):
     Code_strict_agree: DE agreement
     Code_strict_FIN: Final rating
 
-
 #data_responses/processing_others/H01_respB_others_Data_complete-ANON.csv
 -- interim processing file, for the recategorisation free text entries for Timing (data) under "Other" into categorical groupings
-
     Timestamp: Time of review
     Email.Address: Email address of DE [redacted]
     Name.of.Reviewer: Name of DE [redacted]
@@ -281,10 +268,8 @@ loaded via a namespace (and not attached):
     RECAT_by: Who by? [redacted]
     RECAT_notes: Any notes? [redacted]
 
-
 #data_responses/processing_others/H01_respB_others_Code_complete-ANON.csv
 -- interim processing file, for the recategorisation free text entries for Timing (data) under "Other" into categorical groupings
-
     Timestamp: Time of review
     Email.Address: Email address of DE [redacted]
     Name.of.Reviewer: Name of DE [redacted]
@@ -296,12 +281,10 @@ loaded via a namespace (and not attached):
     RECAT_notes: Any notes? [redacted]
 
 
-
-## Data files (results, outputs, visualisations) ----
+## 3 - Data files (results, outputs, visualisations) ----
 
 #outputs_visualisations/FinalPolicyDeterminations_compiled.csv  
 -- This file contains the final aggregated results for our assessment of the data and code submission policies for 275 journals in ecology and evolutionary biology. Determinations are based on DE reponses to a mutliple choice questionnaire, with some post-processing aggregation steps undertaken by the lead authors.
-
    Journals: List of sampled journals
    Data_timing_FIN: Final rating for data timing (After Acceptance, During Peer Review, Not Mentioned)
    Data_strict_FIN: Final rating data strictness (Mandated, Encouraged, On Reviewer Request, Optional, Not Mentioned)
