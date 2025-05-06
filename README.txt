@@ -106,7 +106,7 @@ All interim data processing files neccessary for understanding all steps of the 
 		Submission.Question.Response.y: "If yes, provide a link to your data if it is in a repository. If depositing your data with Dryad, <b>ensure that you give the private reviewer 'sharing' link</b>. If your data is uploaded as supplementary material, please state this. Your paper will be unsubmitted without this information." [redacted]
 
 #data_mandatejournals/Proc_b_processing/H01_Proc B Processing_270820240-ANON.csv
--- Processing dataset for analysis of data compliance information provied in Submission.Question.Response.y above
+-- Processing dataset for analysis of data compliance information provided in Submission.Question.Response.y above
 		sort_id: id number of submission
 		Manuscript.ID: Proc B Ms number [redacted]
 		Submission.Question.Response.y: T/F submission response [redacted]
@@ -252,12 +252,12 @@ All interim data processing files neccessary for understanding all steps of the 
 		Code_clar_Nas: Any Nas for clarity
 
 #data_responses/compdat_culina.csv
--- Policy determinations from the preceding paper Culina et al 2020, for comparison.
+-- Policy determinations from the preceding paper Culina et al 2020, for comparison
 		Journal: Journal in Culina et al 2020
 		Culina: Is code mandatory/encouraged or mandatory/encouraged? 
 
 #data_responses/compdat_culina.csv
--- Policy determinations from the preceding paper Roche et al 2022, for comparison.
+-- Policy determinations from the preceding paper Roche et al 2022, for comparison
 		Journal: Journal in Roche et al 2022
 		policy: rating of data policy (none, strong, weak)
 
