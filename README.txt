@@ -81,7 +81,7 @@ All interim data processing files neccessary for understanding all steps of the 
 ## 1 - Policy compliance data, Proc B and Ecology Letters) ----
 
 #data_mandatejournals/ELE data-ANON.xlsx  
--- Policy compliance data provided by Eco Letts, in xlsx format)
+-- Policy compliance data provided by Eco Letts, in xlsx format
 		Jun-Aug 21 sheet: 
 		Manuscript ID: ID of manuscript [redacted]
 		Compliant data statement provided at initial submission? (y/n/unknown)
@@ -91,7 +91,7 @@ All interim data processing files neccessary for understanding all steps of the 
 		Compliant DOI provided at initial submission? (y/n)
 
 #data_mandatejournals/Proc_B_reextraction report-ANON.csv  
--- Policy compliance data provided by Proc B, original in csv format.
+-- Policy compliance data provided by Proc B, original in csv format
 		Manuscript.ID: ID of manuscript [redacted]
 		Manuscript Type: Type of manuscript submitted
 		Submission Date: Date of manuscript submission
