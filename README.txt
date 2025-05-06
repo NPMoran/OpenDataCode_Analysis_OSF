@@ -62,6 +62,10 @@ Loaded via a namespace (and not attached):
 #3_mandata.R: Ecology Letters and Proceedings B data analysis
 #4_visualisations.R: Graphing code to produce treemaps.
 
+Note: Due to anonymisation and privacy requirements for review and publication, all datasets in this script contaning email addresses and author names have been redacted.
+As a result, some sections of script where processing is based on author names/addresses are non-functional, parts of the script have therefore been disabled, but are still included for transparency. 
+All neccessary output and interim processing files are also still included.
+
 
 ## Data files contents - 
 
@@ -118,48 +122,8 @@ All interim data processing files neccessary for understanding all steps of the 
 		
 
 ## 2 - Data files (policy DE questionnaire response data for journal data and code policy) ----
-
-#data_responses/H01_resp_processed-ANON.csv
--- Processed DE response data from DEs (see processing steps in accompanying scripts)
-		Timestamp: Timing of response
-		Email.Address: Email address of DE [redacted]
-		Name.of.Reviewer: Name of DE [redacted]
-		Name.of.Journal: Name of journal
-		When.was.the.earliest.the.journal.expected.data.to.be.provided.: Timing of data-sharing
-		How.strict.is.this.policy...Data.policy.: Strictness of data-sharing
-		Provide.the.text.that.mentions.the.above.statement..if.possible..: Data policy text.
-		How.clear.do.you.think.this.statement.is.: Clarity of policy rating
-		Where.was.the.data.policy.located...provide.a.url.to.the.specific.page..if.any.: Provide link to the policy
-		Any.other.comments.: Any comments
-		When.was.the.earliest.the.journal.expected.code.to.be.provided: Timing of code-sharing
-		How.strict.is.this.policy...Code.Policy.\: Strictness of code-sharing
-		Provide.the.text.that.mentions.the.above.statement..if.possible...1: Code policy text
-		How.clear.do.you.think.this.statement.is..1: Clarity of policy
-		Where.was.the.data.policy.located...provide.a.url.to.the.specific.page..if.any..1: Provide a link to the code policy
-		Any.other.comments..1: Any other comments
-
-#data_responses/H01_resp_processed_others-ANON.csv
--- Processed DE response data from DEs with free text entries for Timing under "Other" resolved into categorical groupings
-		MergeID: Email for merging [redacted]
-		Timestamp: Timing of response
-		Email.Address: Email address of DE [redacted]
-		Name.of.Reviewer: Name of DE [redacted]
-		Name.of.Journal: Name of journal
-		When.was.the.earliest.the.journal.expected.data.to.be.provided..x: Timing of data-sharing
-		How.strict.is.this.policy...Data.policy.: Strictness of data-sharing
-		Provide.the.text.that.mentions.the.above.statement..if.possible..: Data policy text.
-		How.clear.do.you.think.this.statement.is.: Clarity of policy rating
-		Where.was.the.data.policy.located...provide.a.url.to.the.specific.page..if.any.: Provide link to the policy
-		Any.other.comments.: Any comments
-		When.was.the.earliest.the.journal.expected.code.to.be.provided..x: Timing of code-sharing
-		How.strict.is.this.policy...Code.Policy.\: Strictness of code-sharing
-		Provide.the.text.that.mentions.the.above.statement..if.possible...1: Code policy text
-		How.clear.do.you.think.this.statement.is..1: Clarity of policy
-		Where.was.the.data.policy.located...provide.a.url.to.the.specific.page..if.any..1: Provide a link to the code policy
-		Any.other.comments..1: Any other comments
-
 #data_responses/H01_responses_07022024-ANON.csv
--- Raw DE response data from DEs
+-- Raw response data from DEs
 		Timestamp: Timing of response
 		Email Address: Email address of DE [redacted]
 		Name of Reviewer: Name of DE [redacted]
@@ -178,7 +142,7 @@ All interim data processing files neccessary for understanding all steps of the 
 		Any other comments: Any other comments
 
 #data_responses/H01_responses_07022024_corrections-ANON.csv
--- Raw DE response data from DEs with manual corrections (i.e., errors in entries that DEs identified and asked to be manually corrected)
+-- Raw response data from DEs with manual corrections (i.e., errors in entries that DEs identified and asked to be manually corrected)
 		Timestamp: Timing of response
 		Email Address: Email address of DE [redacted]
 		Name of Reviewer: Name of DE [redacted]
@@ -198,75 +162,61 @@ All interim data processing files neccessary for understanding all steps of the 
 
 #subset assignments/H01_subset_assigments_13122023-ANONYMISED.csv
 --  List of journals for each DE as well as original total list (includes duplicates + old journals)
-	  Subset_number: What number subset did the journal appear in
-    Journal: Name of journal
-    Assigned_to_email: email address of DE [redacted]
-    Notes: Any notes?
+		Subset_number: What number subset did the journal appear in
+		Journal: Name of journal
+		Assigned_to_email: email address of DE [redacted]
+		Notes: Any notes?
 
-#data_responses/H01_resp_aggregated_01102024.csv
--- Aggregated response data for assessment of agreement levels between DEs
-    Journals: Journal extracted
-    N_responses: Number of DE responses
-    Data_timing: Data timing rating
-    Data_timing_agree: How many DEs agree
-    Data_strict: Data strictness rating
-    Data_strict_agree: How many DEs agree
-    Data_clar_mean: Mean clarity for this journal
-    Data_clar_mode: Mode clarity for this journal
-    Data_clar_agree: How many DEs agree
-    Data_clar_Nas: Any Nas for clarity
-    Code_timing: Code timing rating
-    Code_timing_agree: How many DEs agree
-    Code_strict: Code strictness rating
-    Code_strict_agree: How many DEs agree
-    Code_clar_mean: Mean clarity for this journal
-    Code_clar_mode: Mode clarity for this journal	
-    Code_clar_agree: How many DEs agree
-    Code_clar_Nas: Any Nas for clarity
+#data_responses/H01_resp_processed-ANON.csv
+-- Processed response data from DEs (see processing steps in accompanying scripts)
+		Timestamp: Timing of response
+		Email.Address: Email address of DE [redacted]
+		Name.of.Reviewer: Name of DE [redacted]
+		Name.of.Journal: Name of journal
+		When.was.the.earliest.the.journal.expected.data.to.be.provided.: Timing of data-sharing
+		How.strict.is.this.policy...Data.policy.: Strictness of data-sharing
+		Provide.the.text.that.mentions.the.above.statement..if.possible..: Data policy text.
+		How.clear.do.you.think.this.statement.is.: Clarity of policy rating
+		Where.was.the.data.policy.located...provide.a.url.to.the.specific.page..if.any.: Provide link to the policy
+		Any.other.comments.: Any comments
+		When.was.the.earliest.the.journal.expected.code.to.be.provided: Timing of code-sharing
+		How.strict.is.this.policy...Code.Policy.\: Strictness of code-sharing
+		Provide.the.text.that.mentions.the.above.statement..if.possible...1: Code policy text
+		How.clear.do.you.think.this.statement.is..1: Clarity of policy
+		Where.was.the.data.policy.located...provide.a.url.to.the.specific.page..if.any..1: Provide a link to the code policy
+		Any.other.comments..1: Any other comments
 
-#data_responses/compdat_culina.csv
--- Policy determinations from the preceding paper Culina et al 2020, for comparison.
-		Journal: Journal in Culina et al 2020
-		Culina: Is code mandatory/encouraged or mandatory/encouraged? 
-
-#data_responses/compdat_culina.csv
--- Policy determinations from the preceding paper Roche et al 2022, for comparison.
-		Journal: Journal in Roche et al 2022
-		policy: rating of data policy (none, strong, weak)
-
-#data_responses/processing_disagreements/H01_FinalDeterms_01102024-ANON.csv
--- Final policy determinations for each journal, based on DE responses and lead author assessments. 
-    Journals: Name of journal
-    Publisher: Name of publisher
-    Publisher-Level Policy: Was there a publisher-level policy linked in the data/code policy?
-    2024_Update?: Was there an update in 2024
-    Reviewer_A: Name of reviewer A [redacted]
-    Reviewer_B: Name of reviewer B [redacted]
-    Reviewer_notes: Any notes (out of date) [redacted]
-    Data_timing_DE: DE timing rating
-    Data_timing_agree: DE agreement
-    Data_timing_FIN: Final rating
-    Data_strict_DE: DE strictness rating
-    Data_strict_agree: DE agreement
-    Data_strict_FIN: Final rating
-    Code_timing_DE: DE timing rating
-    Code_timing_agree: DE agreement
-    Code_timing_FIN: Final rating
-    Code_strict_DE: DE strictness rating
-    Code_strict_agree: DE agreement
-    Code_strict_FIN: Final rating
+#data_responses/H01_resp_processed_others-ANON.csv
+-- Processed response data from DEs with free text entries for Timing under "Other" resolved into categorical groupings
+		MergeID: Email for merging [redacted]
+		Timestamp: Timing of response
+		Email.Address: Email address of DE [redacted]
+		Name.of.Reviewer: Name of DE [redacted]
+		Name.of.Journal: Name of journal
+		When.was.the.earliest.the.journal.expected.data.to.be.provided..x: Timing of data-sharing
+		How.strict.is.this.policy...Data.policy.: Strictness of data-sharing
+		Provide.the.text.that.mentions.the.above.statement..if.possible..: Data policy text.
+		How.clear.do.you.think.this.statement.is.: Clarity of policy rating
+		Where.was.the.data.policy.located...provide.a.url.to.the.specific.page..if.any.: Provide link to the policy
+		Any.other.comments.: Any comments
+		When.was.the.earliest.the.journal.expected.code.to.be.provided..x: Timing of code-sharing
+		How.strict.is.this.policy...Code.Policy.\: Strictness of code-sharing
+		Provide.the.text.that.mentions.the.above.statement..if.possible...1: Code policy text
+		How.clear.do.you.think.this.statement.is..1: Clarity of policy
+		Where.was.the.data.policy.located...provide.a.url.to.the.specific.page..if.any..1: Provide a link to the code policy
+		Any.other.comments..1: Any other comments
 
 #data_responses/processing_others/H01_respB_others_Data_complete-ANON.csv
 -- interim processing file, for the recategorisation free text entries for Timing (data) under "Other" into categorical groupings
-    Timestamp: Time of review
-    Email.Address: Email address of DE [redacted]
-    Name.of.Reviewer: Name of DE [redacted]
-    Name.of.Journal: Journal reviewed
-    When.was.the.earliest.the.journal.expected.data.to.be.provided.: When was the earliest data was provided text
-    Any.other.comments.: Any comments?
-    RECAT_When.was.the.earliest.the.journal.expected.data.to.be.provided.: Recategorisation of DE text
-    RECAT_by: Who by? [redacted]
-    RECAT_notes: Any notes? [redacted]
+		Timestamp: Time of review
+		Email.Address: Email address of DE [redacted]
+		Name.of.Reviewer: Name of DE [redacted]
+		Name.of.Journal: Journal reviewed
+		When.was.the.earliest.the.journal.expected.data.to.be.provided.: When was the earliest data was provided text
+		Any.other.comments.: Any comments?
+		RECAT_When.was.the.earliest.the.journal.expected.data.to.be.provided.: Recategorisation of DE text
+		RECAT_by: Who by? [redacted]
+		RECAT_notes: Any notes? [redacted]
 
 #data_responses/processing_others/H01_respB_others_Code_complete-ANON.csv
 -- interim processing file, for the recategorisation free text entries for Timing (data) under "Other" into categorical groupings
@@ -280,22 +230,73 @@ All interim data processing files neccessary for understanding all steps of the 
     RECAT_by: Who by? [redacted]
     RECAT_notes: Any notes? [redacted]
 
+#data_responses/H01_resp_aggregated_01102024.csv
+-- Response data aggregated to a journal level, for assessing agreement levels between DEs
+		Journals: Journal extracted
+		N_responses: Number of DE responses
+		Data_timing: Data timing rating
+		Data_timing_agree: How many DEs agree
+		Data_strict: Data strictness rating
+		Data_strict_agree: How many DEs agree
+		Data_clar_mean: Mean clarity for this journal
+		Data_clar_mode: Mode clarity for this journal
+		Data_clar_agree: How many DEs agree
+		Data_clar_Nas: Any Nas for clarity
+		Code_timing: Code timing rating
+		Code_timing_agree: How many DEs agree
+		Code_strict: Code strictness rating
+		Code_strict_agree: How many DEs agree
+		Code_clar_mean: Mean clarity for this journal
+		Code_clar_mode: Mode clarity for this journal	
+		Code_clar_agree: How many DEs agree
+		Code_clar_Nas: Any Nas for clarity
+
+#data_responses/compdat_culina.csv
+-- Policy determinations from the preceding paper Culina et al 2020, for comparison.
+		Journal: Journal in Culina et al 2020
+		Culina: Is code mandatory/encouraged or mandatory/encouraged? 
+
+#data_responses/compdat_culina.csv
+-- Policy determinations from the preceding paper Roche et al 2022, for comparison.
+		Journal: Journal in Roche et al 2022
+		policy: rating of data policy (none, strong, weak)
+
+#data_responses/processing_disagreements/H01_FinalDeterms_01102024-ANON.csv
+-- Interim processing files showing the process of making policy determinations for each journal, based on DE responses with lead author assessments (i.e., Reviewer_A, Reviewer_B). 
+		Journals: Name of journal
+		Publisher: Name of publisher
+		Publisher-Level Policy: Was there a publisher-level policy linked in the data/code policy?
+		2024_Update?: Was there an update in 2024
+		Reviewer_A: Name of reviewer A [redacted]
+		Reviewer_B: Name of reviewer B [redacted]
+		Reviewer_notes: Any notes (out of date) [redacted]
+		Data_timing_DE: DE timing rating
+		Data_timing_agree: DE agreement
+		Data_timing_FIN: Final rating
+		Data_strict_DE: DE strictness rating
+		Data_strict_agree: DE agreement
+		Data_strict_FIN: Final rating
+		Code_timing_DE: DE timing rating
+		Code_timing_agree: DE agreement
+		Code_timing_FIN: Final rating
+		Code_strict_DE: DE strictness rating
+		Code_strict_agree: DE agreement
+		Code_strict_FIN: Final rating
+
 
 ## 3 - Data files (results, outputs, visualisations) ----
 
 #outputs_visualisations/FinalPolicyDeterminations_compiled.csv  
 -- This file contains the final aggregated results for our assessment of the data and code submission policies for 275 journals in ecology and evolutionary biology. Determinations are based on DE reponses to a mutliple choice questionnaire, with some post-processing aggregation steps undertaken by the lead authors.
-   Journals: List of sampled journals
-   Data_timing_FIN: Final rating for data timing (After Acceptance, During Peer Review, Not Mentioned)
-   Data_strict_FIN: Final rating data strictness (Mandated, Encouraged, On Reviewer Request, Optional, Not Mentioned)
-   Data_clarit_FIN: Final rating for data clarity (1-5, from "Totally Unclear" to "Totally Clear")
-   Code_timing_FIN: Final rating for code timing (After Acceptance, During Peer Review, Not Mentioned)
-   Code_strict_FIN: Final rating for code strictness (Mandated, Encouraged, On Reviewer Request, Optional, Not Mentioned)	
-   Code_clarit_FIN: Final rating for code clarity (1-5, from "Totally Unclear" to "Totally Clear")
-
+		Journals: List of sampled journals
+		Data_timing_FIN: Final rating for data timing (After Acceptance, During Peer Review, Not Mentioned)
+		Data_strict_FIN: Final rating data strictness (Mandated, Encouraged, On Reviewer Request, Optional, Not Mentioned)
+		Data_clarit_FIN: Final rating for data clarity (1-5, from "Totally Unclear" to "Totally Clear")
+		Code_timing_FIN: Final rating for code timing (After Acceptance, During Peer Review, Not Mentioned)
+		Code_strict_FIN: Final rating for code strictness (Mandated, Encouraged, On Reviewer Request, Optional, Not Mentioned)	
+		Code_clarit_FIN: Final rating for code clarity (1-5, from "Totally Unclear" to "Totally Clear")
 
 #The remaining output files from the the analysis are all produced and identifiable from included scripts. Brief descriptions are provided below.
-
 #outputs_ visualisations/...
 #Figure1_treemap_data_RZNMv2.png  (Figure 1A output image file)
 #Figure1_treemap_code_RZNMv2.png  (Figure 1B output image file)

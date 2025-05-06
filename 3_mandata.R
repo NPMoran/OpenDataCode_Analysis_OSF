@@ -312,7 +312,8 @@ procb_table <- rbind(procb_table1,
 
 
 
-# - Hypothesis testing for data versus code sharing
+# VIII) Hypothesis testing for data versus code sharing
+#note, VII and IX hypotheses could not be tested given data limitations
 
 Conttab_ProDC <- NULL
 Conttab_ProDC$Data <- c(63+428,869+568)

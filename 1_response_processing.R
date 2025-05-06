@@ -5,7 +5,8 @@
 #Author: [redacted]
 
 
-#NOTE: DUE TO ANONYMISATION AND PRIVACY REQUIREMENTS FOR REVIEW AND PUBLICATION, ALL DATASETS IN THIS SCRIPT CONTANING EMAIL ADDRESSES AND AUTHOR NAMES HAVE BEEN REDACTED.
+#NOTE: DUE TO ANONYMISATION AND PRIVACY REQUIREMENTS FOR REVIEW AND PUBLICATION, 
+#      ALL DATASETS IN THIS SCRIPT CONTANING EMAIL ADDRESSES AND AUTHOR NAMES HAVE BEEN REDACTED.
 #      AS A RESULT, SOME SECTIONS OF SCRIPT WHERE PROCESSING IS BASED ON AUTHOR NAMES/ADDRESSES ARE NON-FUNCTIONAL,
 #      PARTS OF THE SCRIPT HAVE THEREFORE BEEN DISABLED, BUT ARE STILL INCLUDED FOR TRANSPARENCY. 
 #      ALL OUTPUT AND INTERIM PROCESSING FILES ARE ALSO STILL INCLUDED
@@ -179,7 +180,7 @@ table(H01_respB$How.strict.is.this.policy...Code.Policy.) #all 838 responses inc
 
 
 
-#Re-categorisations based on [redacted] decisions 
+#Re-categorisations based on lead author decisions 
 #H01_respB_others_Data_complete <- read.csv("~/OpenDataCode_Analysis_OSF/data_responses/processing_others/H01_respB_others_Data_complete.csv", strip.white= TRUE)
 #H01_respB_others_Code_complete <- read.csv("~/OpenDataCode_Analysis_OSF/data_responses/processing_others/H01_respB_others_Code_complete.csv", strip.white= TRUE)
 #
