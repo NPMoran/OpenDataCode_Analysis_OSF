@@ -220,15 +220,15 @@ All interim data processing files neccessary for understanding all steps of the 
 
 #data_responses/processing_others/H01_respB_others_Code_complete-ANON.csv
 -- interim processing file, for the recategorisation free text entries for Timing (data) under "Other" into categorical groupings
-    Timestamp: Time of review
-    Email.Address: Email address of DE [redacted]
-    Name.of.Reviewer: Name of DE [redacted]
-    Name.of.Journal: Journal reviewed
-    When.was.the.earliest.the.journal.expected.code.to.be.provided.: When was the earliest code was provided text
-    Any.other.comments.: Any comments?
-    RECAT_When.was.the.earliest.the.journal.expected.code.to.be.provided.: Recategorisation of DE text
-    RECAT_by: Who by? [redacted]
-    RECAT_notes: Any notes? [redacted]
+		Timestamp: Time of review
+		Email.Address: Email address of DE [redacted]
+		Name.of.Reviewer: Name of DE [redacted]
+		Name.of.Journal: Journal reviewed
+		When.was.the.earliest.the.journal.expected.code.to.be.provided.: When was the earliest code was provided text
+		Any.other.comments.: Any comments?
+		RECAT_When.was.the.earliest.the.journal.expected.code.to.be.provided.: Recategorisation of DE text
+		RECAT_by: Who by? [redacted]
+		RECAT_notes: Any notes? [redacted]
 
 #data_responses/H01_resp_aggregated_01102024.csv
 -- Response data aggregated to a journal level, for assessing agreement levels between DEs
