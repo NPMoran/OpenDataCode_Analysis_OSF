@@ -207,7 +207,7 @@ All interim data processing files neccessary for understanding all steps of the 
 		Any.other.comments..1: Any other comments
 
 #data_responses/processing_others/H01_respB_others_Data_complete-ANON.csv
--- interim processing file, for the recategorisation free text entries for Timing (data) under "Other" into categorical groupings
+-- Interim processing file, for the recategorisation free text entries for Timing (data) under "Other" into categorical groupings
 		Timestamp: Time of review
 		Email.Address: Email address of DE [redacted]
 		Name.of.Reviewer: Name of DE [redacted]
@@ -219,7 +219,7 @@ All interim data processing files neccessary for understanding all steps of the 
 		RECAT_notes: Any notes? [redacted]
 
 #data_responses/processing_others/H01_respB_others_Code_complete-ANON.csv
--- interim processing file, for the recategorisation free text entries for Timing (data) under "Other" into categorical groupings
+-- Interim processing file, for the recategorisation free text entries for Timing (code) under "Other" into categorical groupings
 		Timestamp: Time of review
 		Email.Address: Email address of DE [redacted]
 		Name.of.Reviewer: Name of DE [redacted]
