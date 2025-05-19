@@ -18,7 +18,7 @@ library(gridExtra)
 
 
 # load data including clarity, strictness and timing of policy
-data <- read.csv("FinalPolicyDeterminations_compiled.csv")
+data <- read.csv("~/OpenDataCode_Analysis_OSF/outputs_visualisations/FinalPolicyDeterminations_compiled.csv")
 data
 
 # Data preparation: Group and summarize by strictness, timing, and clarity
